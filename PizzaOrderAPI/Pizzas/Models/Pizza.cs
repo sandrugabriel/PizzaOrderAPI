@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
+using PizzaOrderAPI.OrdersDetails.Models;
 
 namespace PizzaOrderAPI.Pizzas.Models
 {
@@ -22,6 +23,7 @@ namespace PizzaOrderAPI.Pizzas.Models
         [Required]
         public string Description { get; set; }
 
+        public virtual List<OrderDetails> OrdersDetails { get; set; }
 
     }
 }
