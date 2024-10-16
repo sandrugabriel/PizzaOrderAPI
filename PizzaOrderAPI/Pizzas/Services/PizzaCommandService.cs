@@ -43,6 +43,11 @@ namespace PizzaOrderAPI.Pizzas.Services
                 throw new ItemDoesNotExist(Constants.ItemDoesNotExist);
             }
 
+            if (updateRequest.Price <= 0)
+            {
+                throw new InvalidPrice(Constants.InvalidPrice);
+            }
+
             pizza = await _repo.UpdatePizza(id, updateRequest);
             return pizza;
         }
