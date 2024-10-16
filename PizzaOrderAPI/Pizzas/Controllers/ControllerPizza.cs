@@ -23,6 +23,7 @@ namespace PizzaOrderAPI.Pizzas.Controllers
             _query = query;
         }
 
+        [Authorize]
         public override async Task<ActionResult<List<PizzaResponse>>> GetAll()
         {
             try
@@ -37,6 +38,8 @@ namespace PizzaOrderAPI.Pizzas.Controllers
 
         }
 
+        [Authorize]
+
         public override async Task<ActionResult<PizzaResponse>> GetById([FromQuery] int id)
         {
             try
@@ -50,6 +53,7 @@ namespace PizzaOrderAPI.Pizzas.Controllers
             }
         }
 
+        [Authorize]
         public override async Task<ActionResult<PizzaResponse>> GetByName([FromQuery] string name)
         {
             try
@@ -63,6 +67,7 @@ namespace PizzaOrderAPI.Pizzas.Controllers
             }
         }
 
+        [Authorize]
         public override async Task<ActionResult<PizzaResponse>> CreatePizza([FromBody] CreatePizzaRequest createPizzaRequest)
         {
             try
@@ -84,6 +89,7 @@ namespace PizzaOrderAPI.Pizzas.Controllers
             }
         }
 
+        [Authorize]
         public override async Task<ActionResult<PizzaResponse>> UpdatePizza([FromQuery] int id, [FromBody] UpdatePizzaRequest updatePizzaRequest)
         {
             try
@@ -106,6 +112,7 @@ namespace PizzaOrderAPI.Pizzas.Controllers
 
         }
 
+        [Authorize]
         public override async Task<ActionResult<PizzaResponse>> DeletePizza([FromQuery] int id)
         {
             try
